@@ -1,0 +1,7 @@
+.nav-header {
+    background-color: transparent; /* Para que se vea el fondo menta arriba */
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}

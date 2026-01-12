@@ -1,0 +1,7 @@
+.bio-contenido, .bio-detalles {
+    background-color: var(--white); /* Cartas blancas */
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+    border: none;
+}

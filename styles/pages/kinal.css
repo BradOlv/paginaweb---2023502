@@ -1,0 +1,41 @@
+@import url('../vars.css');
+@import url('../base.css');
+@import url('../../layout/header.css');
+@import url('../../layout/grid.css');
+@import url('../../components/buttons.css');
+@import url('../../components/cards.css');
+
+/* Estilos específicos para la Propuesta */
+.grid-cursos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.curso-item {
+    background: var(--bg-page);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.curso-item:hover {
+    transform: translateY(-5px);
+    background: var(--primary-color);
+    color: white;
+}
+
+.form-kinal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.form-kinal input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}

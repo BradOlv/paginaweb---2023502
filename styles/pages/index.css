@@ -1,0 +1,39 @@
+/* Importamos la base y variables de la misma carpeta styles */
+@import url('../vars.css');
+@import url('../base.css');
+
+/* Importamos layout y components saliendo de styles (../..) */
+@import url('../../layout/header.css');
+@import url('../../layout/grid.css');
+@import url('../../components/buttons.css');
+@import url('../../components/cards.css');
+
+/* Estilos específicos para la navegación de flechas */
+.navegacion-flechas {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+.gustos-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.gustos-lista li {
+    background: var(--bg-page);
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: 500;
+}
+.bio-titulo {
+    text-align: center;      /* Centrado horizontal */
+    color: var(--primary-color);
+    font-size: 3.5rem;       /* Más grande para el inicio */
+    margin: 40px 0;
+    font-weight: 800;
+    width: 100%;             /* Asegura que ocupe todo el ancho para centrar */
+}
+
