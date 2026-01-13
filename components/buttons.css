@@ -1,28 +1,19 @@
 .nav-link {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     text-decoration: none;
     color: var(--primary-color);
-    padding: 12px 25px;
+    padding: 12px 30px;
     background: var(--white);
     border: 2px solid var(--primary-color);
     border-radius: 50px;
     font-weight: bold;
-    transition: all 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .nav-link:hover {
     background: var(--primary-color);
     color: var(--white);
-    box-shadow: 0 5px 15px rgba(85, 176, 166, 0.3);
-}
-
-/* Efecto sutil: si la flecha está a la derecha, se mueve a la derecha */
-.nav-link span {
-    transition: transform 0.3s ease;
-}
-
-.nav-link:hover span {
-    transform: translateX(5px);
+    transform: scale(1.05); /* Se agranda un poquito al pasar el mouse */
 }

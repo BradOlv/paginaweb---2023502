@@ -1,9 +1,9 @@
 :root {
-    --primary-color: #55b0a6; /* Verde menta */
+    --primary-color: #55b0a6; /* Tu verde menta original */
     --accent-color: #3d8a81;
     --bg-page: #e0f2f1;      /* Fondo menta claro */
     --white: #ffffff;
     --text-dark: #333;
-    --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.05);
+    --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.08);
     --radius: 20px;
 }

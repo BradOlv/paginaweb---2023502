@@ -1,39 +1,44 @@
-/* Importamos la base y variables de la misma carpeta styles */
 @import url('../vars.css');
 @import url('../base.css');
-
-/* Importamos layout y components saliendo de styles (../..) */
-@import url('../../layout/header.css');
 @import url('../../layout/grid.css');
 @import url('../../components/buttons.css');
 @import url('../../components/cards.css');
 
-/* Estilos específicos para la navegación de flechas */
+.bio-titulo {
+    text-align: left;
+    /* Usamos un porcentaje para que se mueva a la derecha pero sea más seguro */
+    margin-left: 40%; 
+    color: var(--primary-color);
+    font-size: 4rem; 
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-weight: 800;
+    /* Evita que el título se corte si la pantalla es pequeña */
+    max-width: fit-content;
+}
+
+/* Recuperando los bloques verdes de tus gustos */
+.gustos-lista li {
+    background-color: #c8e6c9; /* Verde menta suave para los items */
+    color: #2e7d32;           /* Texto verde oscuro para contraste */
+    margin: 12px 0;
+    padding: 18px;
+    border-radius: 15px;
+    font-weight: 600;
+    list-style: none;
+    transition: 0.3s ease;
+}
+
+.gustos-lista li:hover {
+    transform: translateX(10px);
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Esto es lo que separa los botones de los cuadros verdes */
 .navegacion-flechas {
     display: flex;
-    gap: 20px;
-    margin-top: 40px;
     justify-content: center;
+    gap: 20px;
+    margin-top: 60px; /* Aumenta este número para bajarlas más */
 }
-
-.gustos-lista {
-    list-style: none;
-    padding: 0;
-}
-
-.gustos-lista li {
-    background: var(--bg-page);
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 12px;
-    font-weight: 500;
-}
-.bio-titulo {
-    text-align: center;      /* Centrado horizontal */
-    color: var(--primary-color);
-    font-size: 3.5rem;       /* Más grande para el inicio */
-    margin: 40px 0;
-    font-weight: 800;
-    width: 100%;             /* Asegura que ocupe todo el ancho para centrar */
-}
-

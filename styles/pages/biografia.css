@@ -1,3 +1,4 @@
+/* 1. Referencias obligatorias a tu estructura */
 @import url('../vars.css');
 @import url('../base.css');
 @import url('../../layout/header.css');
@@ -5,29 +6,35 @@
 @import url('../../components/buttons.css');
 @import url('../../components/cards.css');
 
+/* 2. Título "Biografía" - ¡Centrado de nuevo! */
 .bio-titulo {
-    text-align: center; /* Centra el texto "Biografía" */
+    display: block;        /* Asegura que sea un bloque completo */
+    text-align: center;    /* Centra el texto horizontalmente */
+    width: 100%;           /* Ocupa todo el ancho disponible */
     color: var(--primary-color);
-    font-size: 3rem;
-    margin:  40px 0;
-    font-weight: 800;
+    font-size: 3.5rem;     /* Tamaño grande y moderno */
+    margin: 40px 0;        /* Espacio arriba y abajo */
+    font-weight: 900;
 }
 
+/* 3. Estilo para los bloques de información (izquierda) */
 .detalle {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    justify-content: center; /* Centra el contenido dentro de la columna izquierda si quieres */
-    flex-direction: column;
+    background-color: #f1f8f7; /* Fondo verde menta muy suave */
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--primary-color); /* Línea verde característica */
+    transition: transform 0.3s ease;
 }
 
-.detalle-icono {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+.detalle:hover {
+    transform: scale(1.02); /* Efecto de crecimiento suave */
 }
+
+/* 4. Navegación de flechas (al final del contenido) */
 .navegacion-flechas {
     display: flex;
+    justify-content: center; /* Centra los botones de navegación */
     gap: 20px;
     margin-top: 40px;
-    justify-content: center; /* Esto centra las flechas dentro del cuadro */
 }
