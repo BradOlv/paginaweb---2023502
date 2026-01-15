@@ -1,14 +1,50 @@
-.container-bio {
-    display: grid;
-    grid-template-columns: 350px 1fr;
-    gap: 30px;
-    max-width: 1100px;
-    margin: 0 auto 50px auto; /* Centra el contenedor y da espacio abajo */
-    padding: 20px;
+/* Hoja de estilos para el layout de grid */
+
+/* cuadros de carreras centrados */
+
+.carreras-grid {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-@media (max-width: 900px) {
-    .container-bio {
-        grid-template-columns: 1fr;
-    }
+/* Ajuste para igual tamaño de info de las carreras */
+
+.carrera-card {
+    flex: 0 1 350px; 
+    min-width: 300px;
+}
+
+/* Grid para la sección de información */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+/* Sección de contacto con kinal */
+
+.contact-section {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 50px;
+    box-shadow: var(--shadow-card);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+/* Ajuste responsivo para la sección de contacto */
+
+@media (max-width: 768px) {
+    .contact-section { grid-template-columns: 1fr; }
 }

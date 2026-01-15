@@ -1,3 +1,5 @@
+/*Rutas de estilos para la página de Kinal*/
+
 @import url('../vars.css');
 @import url('../base.css');
 @import url('../../layout/header.css');
@@ -5,37 +7,133 @@
 @import url('../../components/buttons.css');
 @import url('../../components/cards.css');
 
-/* Estilos específicos para la Propuesta */
-.grid-cursos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-}
 
-.curso-item {
-    background: var(--bg-page);
-    padding: 20px;
-    border-radius: 15px;
+/* Estilo del Hero de Kinal */
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('../../assets/kinal.png'); 
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 20px;
     text-align: center;
-    transition: 0.3s;
 }
 
-.curso-item:hover {
-    transform: translateY(-5px);
+/* Título del Hero */
+
+.section-title {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin: 50px 0 20px;
+}
+
+/* Carrusel */
+
+.carousel-section {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 40px;
+    max-width: 1000px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.carousel-container {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+/* Cada slide del carrusel */
+
+
+.carousel-slide {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 40px;
+    border-radius: var(--radius);
+    background-size: cover;
+    background-position: center;
+    color: white; 
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); 
+}
+
+/* Imágenes de los slides */
+
+.carousel-slide:nth-child(1) { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../../assets/kinal4.png'); }
+.carousel-slide:nth-child(2) { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../../assets/kinal5.png'); }
+.carousel-slide:nth-child(3) { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../../assets/kinal6.png'); }
+.carousel-slide:nth-child(4) { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../../assets/kinal7.png'); }
+
+.carousel-slide.active { display: flex; }
+.carousel-dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+
+.carousel-dot.active { background-color: var(--primary-color); }
+
+/* Formulario */
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+
+/* Estilo del botón del formulario */
+
+
+.contact-form button {
     background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Efecto hover para el botón */
+
+.hero h1 {
+    font-size: 3.5rem;
     color: white;
 }
 
-.form-kinal {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
+/* Footer estilo KINAL (Bradley Oliva) */
+
+footer {
+    background-color: var(--accent-color); 
+    color: white; 
+    padding: 30px 20px;
+    text-align: center; 
+    margin-top: 50px;
+    line-height: 1.6;
 }
 
-.form-kinal input {
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
+footer p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
+
+/* Estilo para los títulos en el footer */
+
+footer strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
 }

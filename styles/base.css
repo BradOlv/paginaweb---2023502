@@ -1,18 +1,24 @@
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* estilos para el sitio web */
+
+@import url('vars.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-main {
-    animation: fadeInUp 0.8s ease-out;
+/* Estilo base para el cuerpo */
+
+body {
+    background-color: var(--bg-page);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
 }
 
-.container-bio > * {
-    animation: fadeInUp 1s ease-out both;
+/* Arreglo para que las tarjetas blancas resalten sobre el fondo menta */
+
+.bio-detalles, .bio-contenido, .carrera-card, .form-container {
+    background-color: var(--white) !important;
 }

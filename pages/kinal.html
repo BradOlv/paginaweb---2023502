@@ -4,416 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fundación KINAL - Propuesta de Diseño</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
-
-        :root {
-            --primary-color: #55b0a6;
-            --accent-color: #3d8a81;
-            --bg-page: #e0f2f1;
-            --white: #ffffff;
-            --text-dark: #333;
-            --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.08);
-            --radius: 20px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, var(--bg-page) 0%, #f0f9f8 100%);
-            color: var(--text-dark);
-            min-height: 100vh;
-        }
-
-        /* Header Navigation */
-        .nav-header {
-            background: var(--white);
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: var(--primary-color);
-            padding: 12px 30px;
-            background: var(--white);
-            border: 2px solid var(--primary-color);
-            border-radius: 50px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .nav-link:hover, .nav-link.active {
-            background: var(--primary-color);
-            color: var(--white);
-            transform: scale(1.05);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            color: var(--white);
-            padding: 80px 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-cta {
-            display: inline-flex;
-            gap: 20px;
-            margin-top: 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .btn-primary {
-            padding: 15px 40px;
-            background: var(--white);
-            color: var(--primary-color);
-            border: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-secondary {
-            padding: 15px 40px;
-            background: transparent;
-            color: var(--white);
-            border: 2px solid var(--white);
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn-secondary:hover {
-            background: var(--white);
-            color: var(--primary-color);
-        }
-
-        /* Main Container */
-        main {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        /* Section Title */
-        .section-title {
-            text-align: center;
-            color: var(--primary-color);
-            font-size: 2.5rem;
-            font-weight: 900;
-            margin-bottom: 50px;
-        }
-
-        /* Carreras Grid */
-        .carreras-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-
-        .carrera-card {
-            background: var(--white);
-            border-radius: var(--radius);
-            padding: 40px;
-            box-shadow: var(--shadow-card);
-            transition: all 0.4s ease;
-            text-align: center;
-            border-top: 5px solid var(--primary-color);
-        }
-
-        .carrera-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .carrera-icon {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .carrera-card h3 {
-            color: var(--primary-color);
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-
-        .carrera-card p {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .carrera-tag {
-            display: inline-block;
-            background: var(--bg-page);
-            color: var(--accent-color);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin: 5px;
-        }
-
-        /* Carousel Section */
-        .carousel-section {
-            background: var(--white);
-            border-radius: var(--radius);
-            padding: 50px;
-            box-shadow: var(--shadow-card);
-            margin-bottom: 60px;
-        }
-
-        .carousel-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px;
-            height: 400px;
-            background: var(--bg-page);
-        }
-
-        .carousel-slide {
-            display: none;
-            text-align: center;
-            padding: 80px 40px;
-            height: 100%;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-
-        .carousel-slide.active {
-            display: flex;
-        }
-
-        .carousel-slide h3 {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
-        .carousel-slide p {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 600px;
-        }
-
-        .carousel-controls {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .carousel-dot {
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background: #ddd;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .carousel-dot.active {
-            background: var(--primary-color);
-            width: 40px;
-            border-radius: 10px;
-        }
-
-        /* Info Cards */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-bottom: 60px;
-        }
-
-        .info-card {
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            color: var(--white);
-            padding: 35px;
-            border-radius: var(--radius);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .info-card:hover {
-            transform: scale(1.05);
-        }
-
-        .info-card h4 {
-            font-size: 3rem;
-            font-weight: 900;
-            margin-bottom: 10px;
-        }
-
-        .info-card p {
-            font-size: 1.1rem;
-            opacity: 0.95;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            background: var(--white);
-            border-radius: var(--radius);
-            padding: 50px;
-            box-shadow: var(--shadow-card);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .contact-info h3 {
-            color: var(--primary-color);
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .contact-detail {
-            background: var(--bg-page);
-            padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 15px;
-            border-left: 5px solid var(--primary-color);
-        }
-
-        .contact-detail strong {
-            color: var(--primary-color);
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-
-        .contact-form button {
-            width: 100%;
-            padding: 15px;
-            background: var(--primary-color);
-            color: var(--white);
-            border: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .contact-form button:hover {
-            background: var(--accent-color);
-            transform: translateY(-2px);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--accent-color);
-            color: var(--white);
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 60px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .contact-section {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-cta {
-                flex-direction: column;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../styles/pages/kinal.css">
 </head>
 <body>
     <header class="nav-header">
-        <a href="#" class="nav-link">Inicio</a>
-        <a href="#" class="nav-link">Carreras</a>
+        <a href="../index.html" class="nav-link">Inicio</a>
         <a href="#" class="nav-link active">Propuesta KINAL</a>
         <a href="#" class="nav-link">Contacto</a>
+        
     </header>
 
     <section class="hero">
         <h1>Fundación KINAL</h1>
         <p>Formando profesionales técnicos con excelencia académica y valores humanos desde 1962</p>
-        <div class="hero-cta">
-            <button class="btn-primary">Conoce Nuestras Carreras</button>
-            <button class="btn-secondary">Proceso de Admisión</button>
+        
+        <div class="navegacion-flechas">
+            <a href="../index.html" class="nav-link">
+                <span>⬅ Inicio</span>
+            </a>
+            <a href="biografia.html" class="nav-link">
+                 <span>Ver Biografía ➔</span>
+            </a>
         </div>
     </section>
 
@@ -444,7 +55,7 @@
             </div>
 
             <div class="carrera-card">
-                <span class="carrera-icon">🔧</span>
+                <span class="carrera-icon">🚗</span>
                 <h3>Mecánica Automotriz</h3>
                 <p>Domina el diagnóstico, mantenimiento y reparación de vehículos modernos y sistemas automotrices.</p>
                 <div>
@@ -455,9 +66,9 @@
             </div>
 
             <div class="carrera-card">
-                <span class="carrera-icon">⚙️</span>
-                <h3>Mecánica Industrial</h3>
-                <p>Aprende sobre sistemas de producción, maquinaria industrial y procesos de manufactura.</p>
+                <span class="carrera-icon">🔧</span>
+                <h3>Electrónica</h3>
+                <p>Aprende sobre sistemas electrónicos, circuitos y procesos de manufactura.</p>
                 <div>
                     <span class="carrera-tag">Manufactura</span>
                     <span class="carrera-tag">Maquinaria</span>
@@ -466,20 +77,9 @@
             </div>
 
             <div class="carrera-card">
-                <span class="carrera-icon">🏗️</span>
-                <h3>Construcción</h3>
-                <p>Conviértete en experto en diseño, planificación y ejecución de proyectos de construcción.</p>
-                <div>
-                    <span class="carrera-tag">Diseño</span>
-                    <span class="carrera-tag">Estructuras</span>
-                    <span class="carrera-tag">Proyectos</span>
-                </div>
-            </div>
-
-            <div class="carrera-card">
                 <span class="carrera-icon">🎨</span>
-                <h3>Diseño Gráfico</h3>
-                <p>Crea contenido visual impactante, branding profesional y experiencias digitales creativas.</p>
+                <h3>Dibujo</h3>
+                <p>Creación de planos y representaciones técnicas de edificios o construcciones.</p>
                 <div>
                     <span class="carrera-tag">Diseño Digital</span>
                     <span class="carrera-tag">Branding</span>
@@ -522,7 +122,7 @@
                 <p>Años de experiencia formando profesionales</p>
             </div>
             <div class="info-card">
-                <h4>6</h4>
+                <h4>5</h4>
                 <p>Carreras técnicas especializadas</p>
             </div>
             <div class="info-card">
@@ -530,7 +130,7 @@
                 <p>De empleabilidad en graduados</p>
             </div>
             <div class="info-card">
-                <h4>2000+</h4>
+                <h4>6000+</h4>
                 <p>Estudiantes activos cada año</p>
             </div>
         </div>
@@ -540,15 +140,15 @@
                 <h3>Contáctanos</h3>
                 <div class="contact-detail">
                     <strong>📍 Ubicación</strong>
-                    Calle del Estadio Mateo Flores 7-51, zona 5, Guatemala
+                    6 avenida 13-54 zona 7, Colonia Landívar, 01007 Ciudad de Guatemala, Guatemala, C.A.
                 </div>
                 <div class="contact-detail">
                     <strong>📞 Teléfono</strong>
-                    (502) 2427-5700
+                    (502) 2216-0090
                 </div>
                 <div class="contact-detail">
                     <strong>📧 Correo</strong>
-                    info@kinal.org.gt
+                    infocet@kinal.org.gt
                 </div>
                 <div class="contact-detail">
                     <strong>⏰ Horario</strong>
@@ -569,7 +169,7 @@
 
     <footer>
         <p><strong>Propuesta de Diseño - Fundación KINAL</strong></p>
-        <p>Creado por Bradley Oliva - Estudiante de 5to Perito en Informática</p>
+        <p>Creado por Bradley Oliva - Estudiante de 6to Perito en Informática</p>
         <p>© 2026 Fundación KINAL - Todos los derechos reservados</p>
     </footer>
 
@@ -589,7 +189,6 @@
             dots[currentSlide].classList.add('active');
         }
 
-        // Auto-rotate carousel every 5 seconds
         setInterval(() => {
             currentSlide = (currentSlide + 1) % slides.length;
             showSlide(currentSlide);

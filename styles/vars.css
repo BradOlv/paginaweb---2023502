@@ -1,9 +1,10 @@
+/* Variables de colores y estilos globales */
+
 :root {
-    --primary-color: #55b0a6; /* Tu verde menta original */
-    --accent-color: #3d8a81;
-    --bg-page: #e0f2f1;      /* Fondo menta claro */
+    --primary-color: #55b0a6; /* Verde Kinal principal */
+    --accent-color: #3d867d;
+    --bg-page: #e0f2f1;      
     --white: #ffffff;
-    --text-dark: #333;
-    --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.08);
-    --radius: 20px;
+    --shadow-card: 0 4px 20px rgba(0,0,0,0.08);
+    --radius: 15px;
 }

@@ -1,3 +1,5 @@
+/* Estilo de los enlaces de navegación */
+
 .nav-header {
     background: var(--white);
     padding: 1rem 2rem;
@@ -6,6 +8,8 @@
     box-shadow: var(--shadow);
     justify-content: center;
 }
+
+/* Estilo de los enlaces dentro del header */
 
 .nav-header a {
     text-decoration: none;
@@ -20,6 +24,8 @@
     background: var(--primary-color);
     color: var(--white);
 }
+
+/* Contenedor principal de la biografía */
 
 .container-bio {
     display: flex;

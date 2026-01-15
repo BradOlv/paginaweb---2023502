@@ -1,7 +1,39 @@
+/* Hoja de estilos para el encabezado y la navegación */
+
+/* Barra de navegación superior */
+
 .nav-header {
-    background-color: transparent; /* Para que se vea el fondo menta arriba */
-    padding: 30px 0;
+    background: var(--white);
+    padding: 1.5rem 2rem;
     display: flex;
     justify-content: center;
     gap: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Navegación de cambios de vistas */
+
+.nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--primary-color);
+    padding: 12px 30px;
+    background: var(--white);
+    border: 2px solid var(--primary-color);
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* Efecto para los enlaces de navegación */
+
+.nav-link:hover, .nav-link.active {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: scale(1.05);
 }
