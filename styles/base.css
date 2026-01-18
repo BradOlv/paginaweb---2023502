@@ -11,7 +11,7 @@
 /* Estilo base para el cuerpo */
 
 body {
-    background-color: var(--bg-page);
+    background-color: #b2f3dd;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
     line-height: 1.6;
