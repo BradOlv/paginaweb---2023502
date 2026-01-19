@@ -17,7 +17,7 @@
     align-items: center;
     gap: 10px;
     text-decoration: none;
-    color: white !important; 
+    color: var(--primary-color) !important;
     padding: 10px 25px;
     background: rgba(255, 255, 255, 0.15);
     border: 1px solid white;
@@ -30,9 +30,10 @@
 /* Efecto para los enlaces de navegación */
 
 .navegacion-flechas .nav-link:hover {
-    background: white;
-    color: var(--primary-color) !important;
+    background: var(--primary-color);
+    color: white !important;
     transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(85, 176, 166, 0.3);
 }
 
 /* --- Botones  --- */

@@ -1,21 +1,46 @@
 /* Hoja de estilos para el encabezado y la navegación */
 
 /* Barra de navegación superior */
-
 .nav-header {
     background: var(--white);
-    padding: 1.5rem 2rem;
+    padding: 1rem 3rem;
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
-/* Navegación de cambios de vistas */
+/* Contenedor y estilo del logo */
+.nav-logo {
+    height: 60px; /* Este manda el tamaño */
+    width: auto;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
 
+/* ESTA ES LA REGLA QUE TE FALTA PARA QUE NO SE HAGA GIGANTE */
+.nav-logo img {
+    height: 100%;  
+    width: auto;  
+    display: block;
+    object-fit: contain;
+}
+
+.nav-logo:hover {
+    transform: scale(1.1);
+}
+
+/* Grupo de botones de navegación */
+.nav-menu {
+    display: flex;
+    gap: 20px;
+}
+
+/* Navegación de cambios de vistas */
 .nav-link {
     display: inline-flex;
     align-items: center;
@@ -31,7 +56,6 @@
 }
 
 /* Efecto para los enlaces de navegación */
-
 .nav-link:hover, .nav-link.active {
     background: var(--primary-color);
     color: var(--white);

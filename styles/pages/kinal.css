@@ -1,139 +1,770 @@
-/*Rutas de estilos para la página de Kinal*/
+/* Importación de fuentes de Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
 
-@import url('../vars.css');
-@import url('../base.css');
-@import url('../../layout/header.css');
-@import url('../../layout/grid.css');
-@import url('../../components/buttons.css');
-@import url('../../components/cards.css');
+/* Archivos de configuración y componentes */
+@import url('../variables.css');
+@import url('../globals.css');
+@import url('../../components/layout/Header/Header.css');
+@import url('../../components/layout/grid.css');
+@import url('../../components/common/Button/Button.css');
+@import url('../../components/common/cards.css');
 
+/* Animación: deslizar hacia arriba y aparecer */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-/* Estilo del Hero de Kinal */
+/* Animación: aparecer suavemente */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Animación: movimiento lento del patrón del fondo */
+@keyframes movePattern {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(30px, 30px); }
+}
+
+/* Animación: destello de luz horizontal */
+@keyframes shine {
+    0% { left: -50%; opacity: 0; }
+    50% { opacity: 1; }
+    100% { left: 150%; opacity: 0; }
+}
+
+/* Animación: efecto de flotar arriba y abajo */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Sección inicial (Hero) */
 
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-                url('../../assets/kinal.png'); 
+    position: relative;
+    background: url('../../assets/kinal.png');
     background-size: cover;
     background-position: center;
+    background-attachment: scroll; 
     color: white;
-    padding: 100px 20px;
+    padding: 180px 20px 140px;
     text-align: center;
+    overflow: hidden;
+    box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.2);
 }
 
-/* Título del Hero */
+/* Capa de puntos decorativos sobre el Hero */
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.4;
+    animation: movePattern 20s linear infinite;
+}
+
+/* Título principal con sombras profundas */
+
+.hero h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 5.5rem;
+    font-weight: 900;
+    color: white;
+    text-shadow: 0 10px 50px rgba(0, 0, 0, 0.6), 0 5px 20px rgba(0, 0, 0, 0.4), 0 0 100px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 1.4s ease-out;
+    letter-spacing: -3px;
+    text-transform: uppercase;
+}
+
+/* Párrafo del Hero con espaciado de lectura */
+
+.hero p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    max-width: 1000px;
+    margin: 0 auto 60px;
+    opacity: 1;
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 1.4s ease-out 0.3s backwards;
+    line-height: 2;
+    text-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Contenedor de navegación en el Hero */
+
+.hero .navegacion-flechas {
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 1.4s ease-out 0.6s backwards;
+}
+
+/* Botones con estilo premium blanco */
+
+.hero .navegacion-flechas .nav-link {
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--primary-color) !important;
+    border: 3px solid white;
+    padding: 16px 35px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    text-shadow: none;
+}
+
+/* Hover de botones del Hero */
+
+.hero .navegacion-flechas .nav-link:hover {
+    background: var(--primary-color);
+    color: white !important;
+    border-color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+/* Títulos de sección con degradado de texto */
 
 .section-title {
+    font-family: 'Poppins', sans-serif;
     text-align: center;
-    color: var(--primary-color);
-    font-size: 2.5rem;
-    margin: 50px 0 20px;
-}
-
-/* Carrusel */
-
-.carousel-section {
-    background: var(--white);
-    border-radius: var(--radius);
-    padding: 40px;
-    max-width: 1000px;
-    margin: 40px auto;
-    text-align: center;
-}
-
-.carousel-container {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 3.8rem;
+    font-weight: 900;
+    margin: 100px 0 60px;
     position: relative;
-    height: 250px;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Línea decorativa inferior de los títulos */
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 6px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), var(--accent-color), var(--primary-color), transparent);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(85, 176, 166, 0.5);
+}
+
+/* Grid para 3 columnas de tarjetas */
+.carreras-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 45px;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 30px 80px;
+}
+
+/* Ajuste de posición para la tarjeta 4 */
+
+.carreras-grid .carrera-card:nth-child(4) {
+    grid-column: 1 / 2;
+    margin-left: auto;
+    margin-right: 22.5px;
+}
+
+/* Ajuste de posición para la tarjeta 5 */
+
+.carreras-grid .carrera-card:nth-child(5) {
+    grid-column: 2 / 3;
+    margin-left: 22.5px;
+    margin-right: auto;
+}
+
+/* Diseño de la tarjeta de cada carrera */
+
+.carrera-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 35px;
+    padding: 50px 40px;
+    box-shadow: 0 15px 60px rgba(85, 176, 166, 0.15), 0 8px 25px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+    text-align: center;
+    border-top: 10px solid var(--primary-color);
+    position: relative;
     overflow: hidden;
 }
 
-/* Cada slide del carrusel */
+/* Efecto de luz radial dentro de la tarjeta */
 
+.carrera-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(85, 176, 166, 0.08) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.7s ease;
+    z-index: 0;
+}
+
+/* Mostrar luz al pasar el mouse */
+.carrera-card:hover::before { opacity: 1; }
+
+/* Capa para el efecto de brillo al hover */
+
+.carrera-card::after {
+    content: '';
+    position: absolute;
+    top: -100%; left: -100%; width: 300%; height: 300%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.5) 50%, transparent 70%);
+    transition: all 1s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Activar animación de brillo */
+
+.carrera-card:hover::after { animation: shine 2s ease-in-out; }
+
+/* Elevación de la tarjeta al hover */
+.carrera-card:hover {
+    transform: translateY(-25px) scale(1.04);
+    box-shadow: 0 30px 90px rgba(85, 176, 166, 0.35), 0 15px 45px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 1);
+    border-top-color: var(--accent-color);
+}
+
+/* Iconos de las carreras con sombra */
+.carrera-icon {
+    font-size: 5.5rem;
+    display: block;
+    margin-bottom: 30px;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    filter: drop-shadow(0 8px 20px rgba(85, 176, 166, 0.3));
+    position: relative;
+    z-index: 1;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Efecto del icono al hover */
+.carrera-card:hover .carrera-icon {
+    transform: scale(1.25) rotate(-8deg);
+    filter: drop-shadow(0 15px 35px rgba(85, 176, 166, 0.6));
+}
+
+/* Títulos de las tarjetas */
+
+.carrera-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--dark-text);
+    margin-bottom: 20px;
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 1;
+}
+
+/* Cambio de color del título al hover */
+.carrera-card:hover h3 {
+    color: var(--primary-color);
+    transform: scale(1.08);
+}
+
+/* Texto de descripción en tarjetas */
+
+.carrera-card p {
+    font-family: 'Inter', sans-serif;
+    color: var(--light-text);
+    line-height: 1.9;
+    margin-bottom: 30px;
+    font-size: 1.05rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Etiquetas de colores para especialidades */
+
+.carrera-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin: 6px 4px;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 15px rgba(85, 176, 166, 0.4);
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    z-index: 1;
+}
+
+/* Salto de las etiquetas al hover */
+.carrera-card:hover .carrera-tag {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(85, 176, 166, 0.6);
+}
+
+/* Sección de información "Camino al éxito" */
+
+.camino-exito-section {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(224, 242, 241, 0.95) 100%);
+    backdrop-filter: blur(20px);
+    border-radius: 40px;
+    padding: 70px 60px;
+    max-width: 1300px;
+    margin: 100px auto;
+    box-shadow: 0 25px 80px rgba(85, 176, 166, 0.25), 0 10px 30px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 1);
+    border: 3px solid rgba(255, 255, 255, 0.7);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Título de la sección de éxito */
+
+.camino-exito-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.2rem;
+    font-weight: 900;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+/* Estructura de contenido en dos columnas */
+.camino-exito-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Texto de descripción de la sección */
+
+.camino-texto {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--light-text);
+}
+
+.camino-texto p { margin-bottom: 20px; }
+.camino-texto strong { color: var(--primary-color); font-weight: 700; }
+
+
+.btn-conoce-mas {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 16px 40px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.5s ease;
+    box-shadow: 0 8px 25px rgba(85, 176, 166, 0.4);
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+/* Efecto hover del botón "Conoce más" */
+.btn-conoce-mas:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 35px rgba(85, 176, 166, 0.6);
+}
+
+/* Sección del carrusel de imágenes */
+.carousel-section {
+    max-width: 1500px;
+    margin: 100px auto;
+    padding: 0 30px;
+    text-align: center;
+}
+
+/* Título del carrusel con degradado */
+.carousel-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.2rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+/* Contenedor principal del carrusel */
+
+.carousel-container {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 40px;
+    margin-top: 40px;
+    box-shadow: 0 25px 80px rgba(85, 176, 166, 0.3);
+}
+
+/* Estilo base de cada diapositiva */
 
 .carousel-slide {
     display: none;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     height: 100%;
-    padding: 40px;
-    border-radius: var(--radius);
+    padding: 70px 80px;
+    border-radius: 40px;
     background-size: cover;
     background-position: center;
-    color: white; 
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); 
+    color: white;
+    text-shadow: 0 8px 40px rgba(0, 0, 0, 0.9), 0 4px 20px rgba(0, 0, 0, 0.8);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Imágenes de los slides */
+/* Capa oscura sobre las imágenes del carrusel */
 
-.carousel-slide:nth-child(1) { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../../assets/kinal4.png'); }
-.carousel-slide:nth-child(2) { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../../assets/kinal5.png'); }
-.carousel-slide:nth-child(3) { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../../assets/kinal6.png'); }
-.carousel-slide:nth-child(4) { background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../../assets/kinal7.png'); }
+.carousel-slide::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.4) 100%);
+    z-index: 0;
+}
 
-.carousel-slide.active { display: flex; }
+.carousel-slide h3, .carousel-slide p { position: relative; z-index: 2; }
+
+/* Asignación de imágenes a cada slide */
+.carousel-slide:nth-child(1) { background-image: url('../../assets/kinal4.png'); }
+.carousel-slide:nth-child(2) { background-image: url('../../assets/kinal5.png'); }
+.carousel-slide:nth-child(3) { background-image: url('../../assets/kinal6.png'); }
+.carousel-slide:nth-child(4) { background-image: url('../../assets/kinal7.png'); }
+
+/* Clase activa para mostrar el slide */
+.carousel-slide.active {
+    display: flex;
+    animation: slideIn 1s ease-out;
+}
+
+/* Animación de entrada de los slides */
+@keyframes slideIn {
+    from { opacity: 0; transform: scale(0.95) translateY(30px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Títulos dentro del carrusel */
+.carousel-slide h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.2rem;
+    font-weight: 900;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+}
+
+/* Texto dentro del carrusel */
+.carousel-slide p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    line-height: 2;
+    max-width: 1000px;
+    font-weight: 600;
+}
+
+/* Puntos indicadores debajo del carrusel */
+
+.carousel-controls {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+
+/* Estilo de los puntos inactivos */
 .carousel-dot {
-    height: 12px;
-    width: 12px;
-    margin: 0 5px;
-    background-color: #bbb;
+    height: 18px; width: 18px;
+    background-color: rgba(85, 176, 166, 0.3);
     border-radius: 50%;
-    border: none;
+    border: 3px solid transparent;
     cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+.carousel-dot:hover {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    transform: scale(1.4);
+    box-shadow: 0 6px 20px rgba(85, 176, 166, 0.5);
+}
 
-.carousel-dot.active { background-color: var(--primary-color); }
+/* Estilo del punto activo */
+.carousel-dot.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-color: white;
+    box-shadow: 0 0 0 5px rgba(85, 176, 166, 0.3), 0 6px 20px rgba(85, 176, 166, 0.6);
+    transform: scale(1.5);
+}
 
-/* Formulario */
+/* Rejilla de tarjetas de información (estadísticas) */
 
-.contact-form input, .contact-form textarea {
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1500px;
+    margin: 100px auto;
+    padding: 0 30px;
+}
+
+/* Tarjetas informativas con degradado */
+
+.info-card {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    color: white;
+    padding: 60px 40px;
+    border-radius: 35px;
+    text-align: center;
+    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(85, 176, 166, 0.4), 0 8px 25px rgba(0, 0, 0, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Líneas decorativas en el fondo de la tarjeta info */
+
+.info-card::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%; width: 200%; height: 200%;
+    background-image: repeating-linear-gradient(60deg, transparent, transparent 70px, rgba(255, 255, 255, 0.05) 70px, rgba(255, 255, 255, 0.05) 140px);
+    animation: movePattern 20s linear infinite;
+    opacity: 0.5;
+}
+
+/* Efecto de luz interna al pasar el mouse */
+.info-card::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%; width: 0; height: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: width 1s ease, height 1s ease;
+}
+
+.info-card:hover::after { width: 800px; height: 800px; }
+
+/* Movimiento de la tarjeta info al hover */
+
+.info-card:hover {
+    transform: translateY(-30px) scale(1.1);
+    box-shadow: 0 40px 100px rgba(85, 176, 166, 0.6), 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Números gigantes en tarjetas info */
+
+.info-card h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 5rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Texto de descripción en tarjetas info */
+
+.info-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+    opacity: 0.98;
+}
+
+/* Bloque contenedor de contacto */
+.contact-info-container {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    padding: 60px;
+    border-radius: 40px;
+    max-width: 1500px;
+    margin: 0 auto 60px;
+    box-shadow: 0 25px 80px rgba(85, 176, 166, 0.25);
+    border: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+/* Grid para los 3 bloques de información de contacto */
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+/* Estilo de cada tarjeta de detalle (Tel, Correo, etc) */
+.contact-detail {
+    background: linear-gradient(135deg, var(--bg-page), rgba(255, 255, 255, 0.9));
+    padding: 25px 30px;
+    border-radius: 20px;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.5s ease;
+    border-left: 6px solid var(--primary-color);
+    box-shadow: 0 4px 15px rgba(85, 176, 166, 0.1);
+}
+
+/* Efecto hover en detalles de contacto */
+.contact-detail:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 30px rgba(85, 176, 166, 0.3);
+    border-left-color: var(--accent-color);
+}
+
+/* Texto resaltado en detalles de contacto */
+
+.contact-detail strong {
+    display: block;
+    color: var(--accent-color);
+    font-weight: 900;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+/* Banner de marca en el footer */
+.footer-info {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(85, 176, 166, 0.4);
+}
+
+.footer-brand {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Texto descriptivo del footer */
+.footer-details p {
+    font-family: 'Inter', sans-serif;
+    margin: 8px 0;
+    font-size: 1rem;
+    opacity: 0.95;
+}
+
+.footer-details strong { color: white; font-weight: 700; }
+
+/* Contenedor del formulario de mensajes */
+.contact-form-container {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    padding: 60px;
+    border-radius: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 25px 80px rgba(85, 176, 166, 0.25);
+    border: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+.contact-form-container form { max-width: 100%; }
+
+/* Fila doble para nombre y correo */
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+/* Inputs, selectores y áreas de texto del formulario */
+
+.contact-form-container input,
+.contact-form-container select,
+.contact-form-container textarea {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    padding: 20px 25px;
+    border: 2px solid #e8e8e8;
+    border-radius: 18px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    transition: all 0.4s ease;
+    background: rgba(255, 255, 255, 0.95);
 }
 
+/* El área de mensaje ocupa todo el ancho */
+.contact-form-container textarea {
+    margin-bottom: 25px;
+    grid-column: 1 / -1;
+}
 
-/* Estilo del botón del formulario */
+/* Estilos de foco para los campos del formulario */
+.contact-form-container input:focus,
+.contact-form-container select:focus,
+.contact-form-container textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 5px rgba(85, 176, 166, 0.15);
+    background: white;
+    transform: translateY(-3px);
+}
 
-
-.contact-form button {
-    background: var(--primary-color);
+/* Botón de envío del formulario */
+.contact-form-container button {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     color: white;
     border: none;
-    padding: 15px 30px;
+    padding: 20px 50px;
     border-radius: 50px;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 900;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.15rem;
+    transition: all 0.6s ease;
+    box-shadow: 0 10px 30px rgba(85, 176, 166, 0.5);
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: -1px;
 }
 
-/* Efecto hover para el botón */
-
-.hero h1 {
-    font-size: 3.5rem;
-    color: white;
+/* Efecto hover del botón de envío */
+.contact-form-container button:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 45px rgba(85, 176, 166, 0.7);
 }
 
-/* Footer estilo KINAL (Bradley Oliva) */
-
+/* Estilo final del pie de página */
 footer {
-    background-color: var(--accent-color); 
-    color: white; 
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    text-align: center;
     padding: 30px 20px;
-    text-align: center; 
-    margin-top: 50px;
-    line-height: 1.6;
+    margin-top: 100px;
+    font-family: 'Inter', sans-serif;
 }
 
-footer p {
-    margin: 5px 0;
-    font-size: 0.95rem;
-}
-
-/* Estilo para los títulos en el footer */
-
-footer strong {
-    display: block;
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-}
+footer p { margin: 5px 0; font-size: 1rem; }
